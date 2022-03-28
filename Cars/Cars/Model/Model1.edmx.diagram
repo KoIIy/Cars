@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="38be5484f6d24730950c78783858be0f" Name="Diagram1">
+        <EntityTypeShape EntityType="CarsModel.Adress" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Car" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Country" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Locality" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Mark" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Model" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.Owner" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarsModel.State" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="CarsModel.FK__Adress__Locality__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK__Owner__AdressID__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK__Car__ModelID__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK__Car__OwnerID__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK_State_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK_Locality_State" ManuallyRouted="false" />
+        <AssociationConnector Association="CarsModel.FK__Model__MarkID__267ABA7A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
