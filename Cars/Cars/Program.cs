@@ -10,7 +10,7 @@ namespace Cars
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var _endingFlag = false;
 
@@ -19,7 +19,7 @@ namespace Cars
                 using (CarsEntities db = new CarsEntities())
                 {
 
-                    Console.Write("1 - вывести данные, 2 - внести данные, 0 - Выйти из программы \nВведите значение: ");
+                    Console.Write("1 - вывести данные,\n2 - внести данные,\n0 - Выйти из программы \nВведите значение: ");
                     switch (Console.ReadLine())
                     {
                         case "0":
@@ -85,7 +85,7 @@ namespace Cars
                                     OwnerID = OwnerID
                                 });
 
-                                db.SaveChanges();
+                                await db.SaveChangesAsync();
 
                             }
                             catch (Exception e)
