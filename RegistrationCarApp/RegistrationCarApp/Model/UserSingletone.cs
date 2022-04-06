@@ -64,6 +64,11 @@ namespace RegistrationCarApp.Model
             return instance;
             return null;
         }
+        public static UserSingletone clearInstance()
+        {
+            instance = null;
+            return null;
+        }
     }
 }
 

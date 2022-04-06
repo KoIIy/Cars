@@ -5,17 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistraionCarApp.View.Window"
         mc:Ignorable="d"
-        Title="Главная" Height="450" Width="800" Icon="/Image/Icon/logo_91x90.png" WindowStartupLocation="CenterScreen">
+        Title="Главная" Height="525" Width="800" Icon="/Image/Icon/logo_91x90.png" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Menu Height="25" Grid.RowSpan="1">
-            <MenuItem Header="123">
-                <MenuItem Header="123"/>
-            </MenuItem>
-        </Menu>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
+        <Menu Height="25" Grid.RowSpan="1">
+            <MenuItem Header="Главная">
+                <MenuItem Header="Добавить">
+                </MenuItem>
+                <MenuItem Header="Поиск авто">
+                    <MenuItem Header="По номеру авто"/>
+                    <MenuItem Header="По VIN номеру"/>
+                    <MenuItem Header="По номеру страховки"/>
 
+                </MenuItem>
+                <MenuItem Header="Выйти из аккаунта" Command="{Binding LogOut}">
+
+                </MenuItem>
+                <MenuItem Header="Выход"></MenuItem>
+            </MenuItem>
+            <MenuItem Header ="для Администратора" Visibility="Collapsed">
+                <MenuItem Header="Добавить пользователя"/>
+                <MenuItem Header="Поиск пользователя">
+                    <MenuItem Header="Поиск по Почте"/>
+                    <MenuItem Header="Поиск по Логину"/>
+                    <MenuItem Header="Поиск по Номеру телефона"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Справка" Click="MenuItem_Click">
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="MainFrame" Grid.Row="1" Height="Auto" Width="Auto" />
     </Grid>
 </Window>

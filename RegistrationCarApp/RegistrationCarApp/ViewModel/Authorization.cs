@@ -35,6 +35,7 @@ namespace RegistarionCarApp.ViewModel
                 OnPropertyChanged("Password");
             }
         }
+
         private RelayCommand auth;
         public RelayCommand Auth
         {
@@ -46,17 +47,21 @@ namespace RegistarionCarApp.ViewModel
                         if (Login == "" && Password == "")
                         {
                             MessageBox.Show("Введите логин и пароль.");
+                            return;
                         }
                         if (Login == "")
                         {
                             MessageBox.Show("Введите логин.");
+                            return;
                         }
                         if (Password == "")
                         {
                             MessageBox.Show("Введите пароль.");
+                            return;
                         }
                         using (var db = new CarsEntities())
                         {
+                            
                             //scan database
                             foreach (User user1 in db.User)
                             {
@@ -77,14 +82,10 @@ namespace RegistarionCarApp.ViewModel
                                     }
                                     return;
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Неверный логин или пароль.");
-                                }
-
                             }
+                            MessageBox.Show("Неверный логин или пароль.");
 
-                           
+
                         }
                     }
                     ));

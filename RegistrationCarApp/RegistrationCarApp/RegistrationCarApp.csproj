@@ -4,6 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <LangVersion>preview</LangVersion>
     <ProjectGuid>{CE7C3BD2-872A-44D3-8C70-152229742CED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RegistrationCarApp</RootNamespace>
@@ -116,6 +117,9 @@
     <Compile Include="Core\ICommand.cs" />
     <Compile Include="Model\UserSingletone.cs" />
     <Compile Include="ViewModel\MainClass.cs" />
+    <Compile Include="View\Page\CarAdd.xaml.cs">
+      <DependentUpon>CarAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Window\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
@@ -128,6 +132,10 @@
     </Compile>
     <Compile Include="ViewModel\Authorization.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Page Include="View\Page\CarAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Window\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
