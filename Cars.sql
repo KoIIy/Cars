@@ -56,12 +56,17 @@ CREATE TABLE[User](
 [RoleID] INT FOREIGN KEY REFERENCES[Role](RoleID),
 [PersonID] INT FOREIGN KEY REFERENCES[Person](PersonID)
 );
+CREATE TABLE [Color](
+[ColorID] INT PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(30) NOT NULL
+);
 CREATE TABLE [Car](
 [CarID] INT PRIMARY KEY IDENTITY,
 [Number] NVARCHAR(6) NOT NULL,
-[Region] INT NOT NULL,
+[Region] NVARCHAR(3) NOT NULL,
+[VIN] NVARCHAR(17) NOT NULL,
 [InsuranceNumber] NVARCHAR(50) NOT NULL,
-[Color] NVARCHAR(30) NOT NULL,
+[ColorID] INT FOREIGN KEY REFERENCES[Color](ColorID),
 [Year] NVARCHAR(4) NOT NULL,
 [OwnerID] INT FOREIGN KEY REFERENCES[Person](PersonID) NOT NULL,
 [ModelID] INT FOREIGN KEY REFERENCES[Model](ModelID) NOT NULL
@@ -79,7 +84,7 @@ BEGIN
 					END;
 				ELSE
 					BEGIN
-						RETURN('NotAddet')
+						RETURN('NotAdded')
 					END;
 END;
 GO
@@ -117,7 +122,7 @@ IF NOT EXISTS(
 		END;
 	ELSE
 		BEGIN
-			RETURN('NotAddet')
+			RETURN('NotAdded')
 		END;
 END;
 GO
@@ -136,7 +141,7 @@ IF NOT EXISTS(
 		END;
 	ELSE
 		BEGIN
-			RETURN('NotAddet')
+			RETURN('NotAdded')
 		END;
 END;
 GO
@@ -155,7 +160,7 @@ IF NOT EXISTS(
 			END;
 		ELSE
 			BEGIN
-				RETURN('NotAddet')
+				RETURN('NotAdded')
 			END;
 END;
 
@@ -179,7 +184,7 @@ IF NOT EXISTS(
 		
 		ELSE
 			BEGIN
-				RETURN('NotAddet')
+				RETURN('NotAdded')
 			END;
 END;
 GO
@@ -200,7 +205,7 @@ IF NOT EXISTS(
 			END;
 		ELSE
 			BEGIN
-				RETURN('NotAddet')
+				RETURN('NotAdded')
 			END;
 END;
 GO
@@ -222,79 +227,136 @@ IF NOT EXISTS(
 		
 		ELSE
 			BEGIN
-				RETURN('NotAddet')
+				RETURN('NotAdded')
 			END;
+GO
+CREATE PROC ColorAdd
+@name NVARCHAR(50)
+AS
+BEGIN
+IF NOT EXISTS(
+		SELECT Color.[Name]
+		FROM Color
+		)
+			BEGIN
+				INSERT INTO Color([Name]) VALUES(@name)
+				RETURN('Added')
+			END;
+
+		ELSE
+			BEGIN
+				RETURN('NotAdded')
+			END;
+END;
 GO
 CREATE PROC CarAdd
 @number NVARCHAR(6),
-@region INT,
+@region NVARCHAR(3),
 @insurancenumber NVARCHAR(50),
-@color NVARCHAR(30),
+@colorid INT,
+@vin NVARCHAR (17),
 @year NVARCHAR(4),
 @ownerid INT,
 @modelid INT
 AS
 BEGIN
 IF NOT EXISTS(
-		SELECT Car.Number,Car.Region,Car.InsuranceNumber, Car.Color,Car.[Year],Car.OwnerID,Car.ModelID
+		SELECT Car.Number,Car.Region,Car.InsuranceNumber, Car.ColorID,Car.[Year],Car.OwnerID,Car.ModelID
 		FROM Car
 		)
 			BEGIN
-				INSERT INTO Car(Number,Region,InsuranceNumber,Color,[Year],OwnerID,ModelID) VALUES(@number,@region,@insurancenumber,@color,@year,@ownerid,@modelid)
+				INSERT INTO Car(Number,Region,InsuranceNumber,ColorID,VIN,[Year],OwnerID,ModelID) VALUES(@number,@region,@insurancenumber,@colorid,@vin,@year,@ownerid,@modelid)
 				RETURN('Added')
 			END;
 		
 		ELSE
 			BEGIN
-				RETURN('NotAddet')
+				RETURN('NotAdded')
 			END;
 END;
 
 --ДОБАВЛЕНИЕ ДАННЫХ
+
+GO
+--Авторизация
+CREATE PROC [Authorization]
+@login NVARCHAR(320),
+@password NVARCHAR(320)
+AS
+BEGIN
+IF EXISTS(SELECT [User].[Login],[User].[Login]
+			FROM [User]
+			WHERE [User].[Login] = @login AND [User].[Password] = @password)
+		BEGIN
+			RETURN 'EXIST'
+		END;
+	ELSE
+		BEGIN 
+			RETURN 'NOTEXIST' 
+		END;
+END;
 GO
 SET IDENTITY_INSERT [dbo].[Country] ON
+
 INSERT [dbo].[Country] ([CountryID], [Name]) VALUES (1, N'Россия')
 INSERT [dbo].[Country] ([CountryID], [Name]) VALUES (2, N'Польша')
 INSERT [dbo].[Country] ([CountryID], [Name]) VALUES (3, N'Гремания')
 INSERT [dbo].[Country] ([CountryID], [Name]) VALUES (4, N'США')
 INSERT [dbo].[Country] ([CountryID], [Name]) VALUES (5, N'Китай')
+
 SET IDENTITY_INSERT [dbo].[Country] OFF
 GO
 SET IDENTITY_INSERT [dbo].[State] ON 
+
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (1, N'Краснодарский край', 1)
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (2, N'Московская область', 1)
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (3, N'Хабаровский край ', 1)
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (4, N'Ставропольский край', 1)
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (5, N'Камчатский край ', 1)
 INSERT [dbo].[State] ([StateID], [Name], [CountryID]) VALUES (6, N'Республика Адыгея', 1)
+
 SET IDENTITY_INSERT [dbo].[State] OFF
 GO
+
 SET IDENTITY_INSERT [dbo].[Locality] ON 
+
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (1, N'Курганинск', 1)
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (2, N'Майкоп', 6)
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (3, N'Краснодар', 1)
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (4, N'Москва', 2)
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (5, N'Хабаровск', 3)
 INSERT [dbo].[Locality] ([LocalityID], [Name], [StateID]) VALUES (6, N'', 1)
+
 SET IDENTITY_INSERT [dbo].[Locality] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Adress] ON 
+
 INSERT [dbo].[Adress] ([AdressID], [Street], [LocalityId], [PostCode], [NumberOfHome], [NumberOfApartment]) VALUES (1, N'Пушкина', 1, N'112356', N'15', NULL)
 INSERT [dbo].[Adress] ([AdressID], [Street], [LocalityId], [PostCode], [NumberOfHome], [NumberOfApartment]) VALUES (2, N'Лермонтова', 4, N'573453', N'0', NULL)
 INSERT [dbo].[Adress] ([AdressID], [Street], [LocalityId], [PostCode], [NumberOfHome], [NumberOfApartment]) VALUES (3, N'Гололя', 3, N'125683', N'17', NULL)
 INSERT [dbo].[Adress] ([AdressID], [Street], [LocalityId], [PostCode], [NumberOfHome], [NumberOfApartment]) VALUES (4, N'Зелёная', 1, N'516734', N'12', NULL)
 INSERT [dbo].[Adress] ([AdressID], [Street], [LocalityId], [PostCode], [NumberOfHome], [NumberOfApartment]) VALUES (5, N'Подгорная', 2, N'270007', N'276', NULL)
+
 SET IDENTITY_INSERT [dbo].[Adress] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Person] ON
+
 INSERT [dbo].[Person] ([PersonID], [Name], [MiddleName], [LastName], [AdressID],NumberPhone) VALUES (1, N'Сергей', N'Павлович', N'Зыкин', 5,'89889577079')
 INSERT [dbo].[Person] ([PersonID], [Name], [MiddleName], [LastName], [AdressID],NumberPhone) VALUES (2, N'Илья', N'Николаевич', N'Зелёный', 4,'89385739459')
 INSERT [dbo].[Person] ([PersonID], [Name], [MiddleName], [LastName], [AdressID],NumberPhone) VALUES (3, N'Пётр', N'Иванович', N'Терёмкин', 1,'89159405876')
 INSERT [dbo].[Person] ([PersonID], [Name], [MiddleName], [LastName], [AdressID],NumberPhone) VALUES (4, N'Николай', N'Сергеевич', N'Круглов', 2,'79567435970')
 INSERT [dbo].[Person] ([PersonID], [Name], [MiddleName], [LastName], [AdressID],NumberPhone) VALUES (5, N'Алексей', N'Юрьевич', N'Ерёменко', 3,'79066834261')
+
 SET IDENTITY_INSERT [dbo].[Person] OFF
 GO
-SET IDENTITY_INSERT [dbo].[Mark] ON 
+INSERT [Role]([Name]) VALUES ('Администратор')
+INSERT [Role]([Name]) VALUES ('Пользователь')
+GO
+INSERT [User]([Login],[Password],[Email],RoleID,PersonID) VALUES ('login','password','koiiy03@mail.ru',1,1)
+GO
+
+SET IDENTITY_INSERT [dbo].[Mark] ON
+
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (1, N'Lada(ВАЗ)')
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (2, N'Mercedes-Benz')
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (3, N'BMW')
@@ -302,9 +364,13 @@ INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (4, N'ЗИЛ')
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (5, N'ПАЗ')
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (6, N'УАЗ')
 INSERT [dbo].[Mark] ([MarkID], [Name]) VALUES (7, N'Kia')
+
 SET IDENTITY_INSERT [dbo].[Mark] OFF
+
 GO
+
 SET IDENTITY_INSERT [dbo].[Model] ON 
+
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (1, N'2107', N'1982-2012', 1)
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (3, N'Granta', N'2018-2022', 1)
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (4, N'Granta', N'2011-2018', 1)
@@ -314,9 +380,21 @@ INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (7, N'Carnival
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (8, N'Ceed GT', N'2015-2018', 7)
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (9, N'S Class AMG 55 AMG', N'2002-2005', 2)
 INSERT [dbo].[Model] ([ModelID], [Name], [Year], [MarkID]) VALUES (10, N'C-Class 200', N'2006-2011', 2)
+
 SET IDENTITY_INSERT [dbo].[Model] OFF
 GO
+INSERT [dbo].[Color]([Name]) VALUES('Чёрный')
+INSERT [dbo].[Color]([Name]) VALUES('Зелёный')
+INSERT [dbo].[Color]([Name]) VALUES('Жёлтый')
+INSERT [dbo].[Color]([Name]) VALUES('Оранжевый')
+INSERT [dbo].[Color]([Name]) VALUES('Красный')
+INSERT [dbo].[Color]([Name]) VALUES('Лиловый')
+INSERT [dbo].[Color]([Name]) VALUES('Белый')
+GO
+
 SET IDENTITY_INSERT [dbo].[Car] ON 
-INSERT [dbo].[Car] ([CarID], [Number], [Region], [OwnerID], [InsuranceNumber], [ModelID], [Color], [Year]) VALUES (2, N'х754ва', 99, 2, N'N97126KK', 1, N'Зелёный', N'2011')
-INSERT [dbo].[Car] ([CarID], [Number], [Region], [OwnerID], [InsuranceNumber], [ModelID], [Color], [Year]) VALUES (5, N'К121ТА', 123, 3, N'N12585ST', 3, N'Белый', N'2018')
+
+INSERT [dbo].[Car] ([CarID], [Number], [Region], [OwnerID], [InsuranceNumber], [ModelID], [ColorID],[VIN], [Year]) VALUES (1, N'х754ва', N'99', 2, N'N97126KK', 1, 1,'JH2PC35051M200020', N'2011')
+INSERT [dbo].[Car] ([CarID], [Number], [Region], [OwnerID], [InsuranceNumber], [ModelID], [ColorID],[VIN], [Year]) VALUES (2, N'К121ТА', N'123', 3, N'N12585ST', 3, 4,'KL1UF756E6B195928', N'2018')
+
 SET IDENTITY_INSERT [dbo].[Car] OFF

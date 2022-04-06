@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adress">
+    <Key>
+      <PropertyRef Name="AdressID" />
+    </Key>
+    <Property Name="AdressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumberOfHome" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NumberOfApartment" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="LocalityId" Type="Int32" Nullable="false" />
+    <Property Name="PostCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Locality" Relationship="Self.FK__Adress__Locality__30F848ED" FromRole="Adress" ToRole="Locality" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__Person__AdressID__33D4B598" FromRole="Adress" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="CarID" />
+    </Key>
+    <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InsuranceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ColorID" Type="Int32" />
+    <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OwnerID" Type="Int32" Nullable="false" />
+    <Property Name="ModelID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Color" Relationship="Self.FK__Car__ColorID__3E52440B" FromRole="Car" ToRole="Color" />
+    <NavigationProperty Name="Model" Relationship="Self.FK__Car__ModelID__403A8C7D" FromRole="Car" ToRole="Model" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__Car__OwnerID__3F466844" FromRole="Car" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK__Car__ColorID__3E52440B" FromRole="Color" ToRole="Car" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="State" Relationship="Self.FK__State__CountryId__2B3F6F97" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Locality">
+    <Key>
+      <PropertyRef Name="LocalityID" />
+    </Key>
+    <Property Name="LocalityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Adress__Locality__30F848ED" FromRole="Locality" ToRole="Adress" />
+    <NavigationProperty Name="State" Relationship="Self.FK__Locality__StateI__2E1BDC42" FromRole="Locality" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Mark">
+    <Key>
+      <PropertyRef Name="MarkID" />
+    </Key>
+    <Property Name="MarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Model" Relationship="Self.FK__Model__MarkID__267ABA7A" FromRole="Mark" ToRole="Model" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ModelID" />
+    </Key>
+    <Property Name="ModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Year" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MarkID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Car" Relationship="Self.FK__Car__ModelID__403A8C7D" FromRole="Model" ToRole="Car" />
+    <NavigationProperty Name="Mark" Relationship="Self.FK__Model__MarkID__267ABA7A" FromRole="Model" ToRole="Mark" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdressID" Type="Int32" Nullable="false" />
+    <Property Name="NumberPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Adress" Relationship="Self.FK__Person__AdressID__33D4B598" FromRole="Person" ToRole="Adress" />
+    <NavigationProperty Name="Car" Relationship="Self.FK__Car__OwnerID__3F466844" FromRole="Person" ToRole="Car" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User__PersonID__398D8EEE" FromRole="Person" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User__RoleID__38996AB5" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__State__CountryId__2B3F6F97" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Locality" Relationship="Self.FK__Locality__StateI__2E1BDC42" FromRole="State" ToRole="Locality" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PersonID" Type="Int32" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__User__PersonID__398D8EEE" FromRole="User" ToRole="Person" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleID__38996AB5" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK__Adress__Locality__30F848ED">
+    <End Role="Locality" Type="Self.Locality" Multiplicity="1" />
+    <End Role="Adress" Type="Self.Adress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locality">
+        <PropertyRef Name="LocalityID" />
+      </Principal>
+      <Dependent Role="Adress">
+        <PropertyRef Name="LocalityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Person__AdressID__33D4B598">
+    <End Role="Adress" Type="Self.Adress" Multiplicity="1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adress">
+        <PropertyRef Name="AdressID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="AdressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Car__ColorID__3E52440B">
+    <End Role="Color" Type="Self.Color" Multiplicity="0..1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="ColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Car__ModelID__403A8C7D">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ModelID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="ModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Car__OwnerID__3F466844">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Car" Type="Self.Car" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__CountryId__2B3F6F97">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Locality__StateI__2E1BDC42">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="Locality" Type="Self.Locality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Locality">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Model__MarkID__267ABA7A">
+    <End Role="Mark" Type="Self.Mark" Multiplicity="1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark">
+        <PropertyRef Name="MarkID" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="MarkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__PersonID__398D8EEE">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleID__38996AB5">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adress" EntityType="Self.Adress" />
+    <EntitySet Name="Car" EntityType="Self.Car" />
+    <EntitySet Name="Color" EntityType="Self.Color" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Locality" EntityType="Self.Locality" />
+    <EntitySet Name="Mark" EntityType="Self.Mark" />
+    <EntitySet Name="Model" EntityType="Self.Model" />
+    <EntitySet Name="Person" EntityType="Self.Person" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="State" EntityType="Self.State" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK__Adress__Locality__30F848ED" Association="Self.FK__Adress__Locality__30F848ED">
+      <End Role="Locality" EntitySet="Locality" />
+      <End Role="Adress" EntitySet="Adress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Person__AdressID__33D4B598" Association="Self.FK__Person__AdressID__33D4B598">
+      <End Role="Adress" EntitySet="Adress" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Car__ColorID__3E52440B" Association="Self.FK__Car__ColorID__3E52440B">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Car__ModelID__403A8C7D" Association="Self.FK__Car__ModelID__403A8C7D">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Car__OwnerID__3F466844" Association="Self.FK__Car__OwnerID__3F466844">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Car" EntitySet="Car" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__CountryId__2B3F6F97" Association="Self.FK__State__CountryId__2B3F6F97">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Locality__StateI__2E1BDC42" Association="Self.FK__Locality__StateI__2E1BDC42">
+      <End Role="State" EntitySet="State" />
+      <End Role="Locality" EntitySet="Locality" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Model__MarkID__267ABA7A" Association="Self.FK__Model__MarkID__267ABA7A">
+      <End Role="Mark" EntitySet="Mark" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__PersonID__398D8EEE" Association="Self.FK__User__PersonID__398D8EEE">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleID__38996AB5" Association="Self.FK__User__RoleID__38996AB5">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <FunctionImport Name="AdressAdd">
+      <Parameter Name="street" Mode="In" Type="String" />
+      <Parameter Name="numberofhome" Mode="In" Type="String" />
+      <Parameter Name="numberofapartments" Mode="In" Type="String" />
+      <Parameter Name="localitiid" Mode="In" Type="Int32" />
+      <Parameter Name="postcode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CarAdd">
+      <Parameter Name="number" Mode="In" Type="String" />
+      <Parameter Name="region" Mode="In" Type="String" />
+      <Parameter Name="insurancenumber" Mode="In" Type="String" />
+      <Parameter Name="colorid" Mode="In" Type="Int32" />
+      <Parameter Name="vin" Mode="In" Type="String" />
+      <Parameter Name="year" Mode="In" Type="String" />
+      <Parameter Name="ownerid" Mode="In" Type="Int32" />
+      <Parameter Name="modelid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ColorAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CountryAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LocalityAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="stateid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MarkAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ModelAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="year" Mode="In" Type="String" />
+      <Parameter Name="markid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PersonAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="midlename" Mode="In" Type="String" />
+      <Parameter Name="lastname" Mode="In" Type="String" />
+      <Parameter Name="adressid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="StateAdd">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="countryid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UserAdd">
+      <Parameter Name="login" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="roleid" Mode="In" Type="Int32" />
+      <Parameter Name="personid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

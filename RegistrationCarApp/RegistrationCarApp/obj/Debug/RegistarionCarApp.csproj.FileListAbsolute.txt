@@ -1,0 +1,15 @@
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\bin\Debug\RegistarionCarApp.exe.config
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\bin\Debug\RegistarionCarApp.exe
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\bin\Debug\RegistarionCarApp.pdb
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.csproj.AssemblyReference.cache
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\App.g.cs
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp_MarkupCompile.cache
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp_MarkupCompile.lref
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.g.resources
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.Properties.Resources.resources
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.csproj.GenerateResource.cache
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.csproj.CoreCompileInputs.cache
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.exe
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\RegistarionCarApp.pdb
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\View\Window\AuthorizationWindow.g.cs
+E:\Projects\Cars\RegistarionCarApp\RegistarionCarApp\obj\Debug\View\Window\AuthorizationWindow.baml
