@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Menu Height="25" Grid.RowSpan="1">
             <MenuItem Header="Главная">
-                <MenuItem Header="Добавить">
+                <MenuItem Header="Добавить автомобиль" Command="{Binding OpenAddCarPage}">
                 </MenuItem>
                 <MenuItem Header="Поиск авто">
                     <MenuItem Header="По номеру авто"/>

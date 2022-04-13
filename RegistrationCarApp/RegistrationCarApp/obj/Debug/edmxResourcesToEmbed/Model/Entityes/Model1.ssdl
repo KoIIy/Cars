@@ -97,8 +97,8 @@
     <Property Name="Login" Type="nvarchar" MaxLength="320" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="320" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="320" Nullable="false" />
-    <Property Name="RoleID" Type="int" />
-    <Property Name="PersonID" Type="int" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="PersonID" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK__Adress__Locality__30F848ED">
     <End Role="Locality" Type="Self.Locality" Multiplicity="1" />
@@ -197,7 +197,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__User__PersonID__398D8EEE">
-    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Person">
@@ -209,7 +209,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__User__RoleID__38996AB5">
-    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Role">
@@ -227,10 +227,6 @@
     <Parameter Name="localitiid" Type="int" Mode="In" />
     <Parameter Name="postcode" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="Authorization" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="login" Type="nvarchar" Mode="In" />
-    <Parameter Name="password" Type="nvarchar" Mode="In" />
-  </Function>
   <Function Name="CarAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="number" Type="nvarchar" Mode="In" />
     <Parameter Name="region" Type="nvarchar" Mode="In" />
@@ -247,6 +243,7 @@
   <Function Name="CountryAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="LocalityAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name" Type="nvarchar" Mode="In" />
     <Parameter Name="stateid" Type="int" Mode="In" />
@@ -265,6 +262,36 @@
     <Parameter Name="lastname" Type="nvarchar" Mode="In" />
     <Parameter Name="adressid" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="StateAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name" Type="nvarchar" Mode="In" />
     <Parameter Name="countryid" Type="int" Mode="In" />

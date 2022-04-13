@@ -113,7 +113,6 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="AdressAdd" FunctionName="Хранилище CarsModel.AdressAdd" />
-    <FunctionImportMapping FunctionImportName="Authorization" FunctionName="Хранилище CarsModel.Authorization" />
     <FunctionImportMapping FunctionImportName="CarAdd" FunctionName="Хранилище CarsModel.CarAdd" />
     <FunctionImportMapping FunctionImportName="ColorAdd" FunctionName="Хранилище CarsModel.ColorAdd" />
     <FunctionImportMapping FunctionImportName="CountryAdd" FunctionName="Хранилище CarsModel.CountryAdd" />
@@ -121,6 +120,30 @@
     <FunctionImportMapping FunctionImportName="MarkAdd" FunctionName="Хранилище CarsModel.MarkAdd" />
     <FunctionImportMapping FunctionImportName="ModelAdd" FunctionName="Хранилище CarsModel.ModelAdd" />
     <FunctionImportMapping FunctionImportName="PersonAdd" FunctionName="Хранилище CarsModel.PersonAdd" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище CarsModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище CarsModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище CarsModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище CarsModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarsModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище CarsModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarsModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище CarsModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище CarsModel.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="StateAdd" FunctionName="Хранилище CarsModel.StateAdd" />
     <FunctionImportMapping FunctionImportName="UserAdd" FunctionName="Хранилище CarsModel.UserAdd" />
   </EntityContainerMapping>

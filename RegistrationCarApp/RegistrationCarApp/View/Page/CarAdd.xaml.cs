@@ -18,7 +18,7 @@ namespace RegistrationCarApp.View.Page
     /// <summary>
     /// Логика взаимодействия для CarAdd.xaml
     /// </summary>
-    public partial class CarAdd : Page
+    public partial class CarAdd 
     {
         public CarAdd()
         {

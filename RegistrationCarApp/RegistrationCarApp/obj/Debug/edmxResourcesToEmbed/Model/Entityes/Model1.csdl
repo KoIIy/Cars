@@ -115,8 +115,8 @@
     <Property Name="Login" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RoleID" Type="Int32" />
-    <Property Name="PersonID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="PersonID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Person" Relationship="Self.FK__User__PersonID__398D8EEE" FromRole="User" ToRole="Person" />
     <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleID__38996AB5" FromRole="User" ToRole="Role" />
   </EntityType>
@@ -217,7 +217,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__User__PersonID__398D8EEE">
-    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Person">
@@ -229,7 +229,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__User__RoleID__38996AB5">
-    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Role">
@@ -299,10 +299,6 @@
       <Parameter Name="localitiid" Mode="In" Type="Int32" />
       <Parameter Name="postcode" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="Authorization">
-      <Parameter Name="login" Mode="In" Type="String" />
-      <Parameter Name="password" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="CarAdd">
       <Parameter Name="number" Mode="In" Type="String" />
       <Parameter Name="region" Mode="In" Type="String" />
@@ -337,6 +333,36 @@
       <Parameter Name="lastname" Mode="In" Type="String" />
       <Parameter Name="adressid" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CarsModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CarsModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
     <FunctionImport Name="StateAdd">
       <Parameter Name="name" Mode="In" Type="String" />
       <Parameter Name="countryid" Mode="In" Type="Int32" />
@@ -349,4 +375,15 @@
       <Parameter Name="personid" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

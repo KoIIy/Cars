@@ -1,6 +1,7 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistraionCarApp.View.Window;
 using RegistrationCarApp.Model;
+using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,26 @@ namespace RegistrationCarApp.ViewModel
                         foreach (Window window in Application.Current.Windows)
                         {
                             window.Close();
+                        }
+                    }
+                    ));
+            }
+        }
+        private RelayCommand openAddCarPage;
+        public RelayCommand OpenAddCarPage
+        {
+            get
+            {
+                return openAddCarPage ?? (
+                    openAddCarPage = new RelayCommand(obj =>
+                    {
+                        CarAdd carAdd = new CarAdd();
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is MainWindow)
+                            {
+                                (window as MainWindow).MainFrame.Navigate(carAdd);
+                            }
                         }
                     }
                     ));
