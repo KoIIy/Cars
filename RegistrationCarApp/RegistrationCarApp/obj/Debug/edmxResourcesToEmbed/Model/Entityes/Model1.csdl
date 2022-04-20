@@ -18,8 +18,8 @@
       <PropertyRef Name="CarID" />
     </Key>
     <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="true" />
+    <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="true" />
     <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="InsuranceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ColorID" Type="Int32" />

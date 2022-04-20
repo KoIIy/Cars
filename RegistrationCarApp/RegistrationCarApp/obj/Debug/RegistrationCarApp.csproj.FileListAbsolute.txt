@@ -74,3 +74,5 @@ E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\RegistrationCar
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\RegistrationCarApp.pdb
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\CarAdd.g.cs
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\CarAdd.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\AddMarkOrModelCarWindwo.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\AddMarkOrModelCarWindwo.baml

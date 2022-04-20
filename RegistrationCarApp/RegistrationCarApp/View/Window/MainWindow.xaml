@@ -16,7 +16,7 @@
                 <MenuItem Header="Добавить автомобиль" Command="{Binding OpenAddCarPage}">
                 </MenuItem>
                 <MenuItem Header="Поиск авто">
-                    <MenuItem Header="По номеру авто"/>
+                    <MenuItem Header="По номеру авто" Command="{Binding OpenSearchCarOnCarNumber}"/>
                     <MenuItem Header="По VIN номеру"/>
                     <MenuItem Header="По номеру страховки"/>
 

@@ -1,10 +1,12 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistraionCarApp.View.Window;
 using RegistrationCarApp.Model;
+using RegistrationCarApp.Model.Entityes;
 using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +14,19 @@ using System.Windows;
 
 namespace RegistrationCarApp.ViewModel
 {
-    class MainClass:BaseViewModel
+    class MainClass : BaseViewModel
     {
-        
+        public CarAdd carAdd = new CarAdd();
+        public MainClass()
+        {
+            foreach (Window window in App.Current.Windows)
+            {
+                if (window is MainWindow)
+                {
+                    (window as MainWindow).MainFrame.Navigate(carAdd);
+                }
+            } 
+        }
         private RelayCommand logOut;
         public RelayCommand LogOut
         {
@@ -44,6 +56,7 @@ namespace RegistrationCarApp.ViewModel
                 return exit ?? (
                     exit = new RelayCommand(obj =>
                     {
+                        
                         UserSingletone.clearInstance();
                         foreach (Window window in Application.Current.Windows)
                         {
@@ -61,7 +74,7 @@ namespace RegistrationCarApp.ViewModel
                 return openAddCarPage ?? (
                     openAddCarPage = new RelayCommand(obj =>
                     {
-                        CarAdd carAdd = new CarAdd();
+                        
                         foreach (Window window in Application.Current.Windows)
                         {
                             if (window is MainWindow)
@@ -72,6 +85,33 @@ namespace RegistrationCarApp.ViewModel
                     }
                     ));
             }
+        }
+        private RelayCommand openSearchCarOnCarNumber;
+        public RelayCommand OpenSearchCarOnCarNumber
+        {
+            get
+            {
+                return openSearchCarOnCarNumber ?? (
+                    openSearchCarOnCarNumber = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            SearchCarOnCarNumber searchCarOnCarNumber = new SearchCarOnCarNumber();
+                            if (window is MainWindow)
+                            {
+                                (window as MainWindow).MainFrame.Navigate(searchCarOnCarNumber);
+                            }
+                        }
+                    }));
+            }
+        }
+
+        /// <summary>
+        /// метод позволяет обновить список марк в Классе AddCar
+        /// </summary>
+        public void UpdateMark()
+        {
+            carAdd.UpdateMark();
         }
     }
 }

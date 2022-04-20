@@ -67,6 +67,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\ICommand.cs" />
+    <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Entityes\Adress.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -121,13 +122,27 @@
     <Compile Include="Model\Entityes\User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\CarModel.cs" />
     <Compile Include="Model\UserSingletone.cs" />
+    <Compile Include="ViewModel\CarAdd\AddCar.cs" />
+    <Compile Include="ViewModel\CarAdd\AddMarkOrModel.cs" />
+    <Compile Include="ViewModel\EditCar.cs" />
     <Compile Include="ViewModel\MainClass.cs" />
+    <Compile Include="ViewModel\SearchCar.cs" />
     <Compile Include="View\Page\CarAdd.xaml.cs">
       <DependentUpon>CarAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Page\SearchCarOnCarNumber.xaml.cs">
+      <DependentUpon>SearchCarOnCarNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Window\AddMarkOrModelCarWindwo.xaml.cs">
+      <DependentUpon>AddMarkOrModelCarWindwo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Window\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Window\EditCarWindow.xaml.cs">
+      <DependentUpon>EditCarWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Window\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -142,7 +157,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Page\SearchCarOnCarNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Window\AddMarkOrModelCarWindwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Window\AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Window\EditCarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +213,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\plus.png" />
     <Content Include="Model\Entityes\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

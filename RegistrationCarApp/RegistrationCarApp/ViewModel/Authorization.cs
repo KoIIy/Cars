@@ -35,6 +35,9 @@ namespace RegistarionCarApp.ViewModel
                 OnPropertyChanged("Password");
             }
         }
+        /// <summary>
+        /// Процедура авторизации
+        /// </summary>
 
         private RelayCommand auth;
         public RelayCommand Auth

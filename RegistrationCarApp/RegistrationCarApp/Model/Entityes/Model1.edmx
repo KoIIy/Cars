@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище CarsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище CarsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adress">
           <Key>
             <PropertyRef Name="AdressID" />
@@ -21,8 +21,8 @@
             <PropertyRef Name="CarID" />
           </Key>
           <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Number" Type="nvarchar" MaxLength="6" Nullable="false" />
-          <Property Name="Region" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="6" />
+          <Property Name="Region" Type="nvarchar" MaxLength="3" />
           <Property Name="VIN" Type="nvarchar" MaxLength="17" Nullable="false" />
           <Property Name="InsuranceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ColorID" Type="int" />
@@ -361,8 +361,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CarsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -384,8 +383,8 @@
             <PropertyRef Name="CarID" />
           </Key>
           <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="true" />
           <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="InsuranceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ColorID" Type="Int32" />
@@ -676,17 +675,17 @@
             <Parameter Name="modelid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ColorAdd">
-            <Parameter Name="name" Mode="In" Type="String" />
+          <Parameter Name="name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CountryAdd">
-            <Parameter Name="name" Mode="In" Type="String" />
+          <Parameter Name="name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="LocalityAdd">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="stateid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MarkAdd">
-            <Parameter Name="name" Mode="In" Type="String" />
+          <Parameter Name="name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ModelAdd">
             <Parameter Name="name" Mode="In" Type="String" />

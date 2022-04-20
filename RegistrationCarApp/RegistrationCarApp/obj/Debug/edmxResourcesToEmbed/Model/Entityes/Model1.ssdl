@@ -16,8 +16,8 @@
       <PropertyRef Name="CarID" />
     </Key>
     <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Number" Type="nvarchar" MaxLength="6" Nullable="false" />
-    <Property Name="Region" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="6" />
+    <Property Name="Region" Type="nvarchar" MaxLength="3" />
     <Property Name="VIN" Type="nvarchar" MaxLength="17" Nullable="false" />
     <Property Name="InsuranceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ColorID" Type="int" />
