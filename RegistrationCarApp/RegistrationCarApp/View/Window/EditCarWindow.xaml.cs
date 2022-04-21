@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationCarApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,9 @@ namespace RegistrationCarApp.View.Window
     /// <summary>
     /// Логика взаимодействия для EditCarWindow.xaml
     /// </summary>
-    public partial class EditCarWindow : Window
+    public partial class EditCarWindow 
     {
+        public EditCar editCar = new EditCar();
         public EditCarWindow()
         {
             InitializeComponent();

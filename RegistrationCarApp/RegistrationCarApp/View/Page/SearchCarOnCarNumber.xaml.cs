@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationCarApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,13 @@ namespace RegistrationCarApp.View.Page
     /// <summary>
     /// Логика взаимодействия для SearchCarOnCarNumber.xaml
     /// </summary>
-    public partial class SearchCarOnCarNumber : Page
+    public partial class SearchCarOnCarNumber
     {
+        SearchCar searchCar = new SearchCar();
         public SearchCarOnCarNumber()
         {
             InitializeComponent();
+            DataContext = searchCar;
         }
     }
 }

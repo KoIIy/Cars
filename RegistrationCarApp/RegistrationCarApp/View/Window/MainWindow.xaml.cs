@@ -22,7 +22,7 @@ namespace RegistraionCarApp.View.Window
     /// </summary>
     public partial class MainWindow
     {
-        MainClass mainClass = new MainClass();
+        public  MainClass mainClass = new MainClass();
         public MainWindow()
         {
             InitializeComponent();
@@ -32,13 +32,6 @@ namespace RegistraionCarApp.View.Window
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
            
-        }
-        /// <summary>
-        /// метод позволяет обновить список марк в Классе AddCar
-        /// </summary>
-        public void UpdateMark()
-        {
-            mainClass.UpdateMark();
         }
     }
 }

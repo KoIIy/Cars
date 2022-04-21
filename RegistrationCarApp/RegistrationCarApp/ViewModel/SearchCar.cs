@@ -1,5 +1,6 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.View.Window;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -54,7 +55,10 @@ namespace RegistrationCarApp.ViewModel
                             {
                                 if (car.Number == Number && car.Region == Region)
                                 {
-                                
+                                    var editCarWindow = new EditCarWindow();
+                                    editCarWindow.editCar.carID = car.CarID;
+                                    new EditCarWindow().ShowDialog();
+                                    break;
                                 }
                             }
                         }

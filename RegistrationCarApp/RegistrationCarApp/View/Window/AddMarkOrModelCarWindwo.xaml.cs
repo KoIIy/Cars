@@ -34,7 +34,7 @@ namespace RegistrationCarApp.View.Window
             {
                 if (window is MainWindow)
                 {
-                    (window as MainWindow).UpdateMark();
+                    (window as MainWindow).mainClass.carAdd.UpdateMark();
                 }
             }
         }

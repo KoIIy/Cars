@@ -1,14 +1,16 @@
-﻿using System;
+﻿using RegistarionCarApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace RegistrationCarApp.ViewModel
 {
-    class EditCar
+    public class EditCar:BaseViewModel
     {
-        private ObservableCollection<>
+        public int carID;
     }
 }

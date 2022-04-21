@@ -14,7 +14,7 @@ using System.Windows;
 
 namespace RegistrationCarApp.ViewModel
 {
-    class MainClass : BaseViewModel
+    public class MainClass : BaseViewModel
     {
         public CarAdd carAdd = new CarAdd();
         public MainClass()
@@ -106,12 +106,5 @@ namespace RegistrationCarApp.ViewModel
             }
         }
 
-        /// <summary>
-        /// метод позволяет обновить список марк в Классе AddCar
-        /// </summary>
-        public void UpdateMark()
-        {
-            carAdd.UpdateMark();
-        }
     }
 }

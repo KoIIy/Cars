@@ -22,9 +22,9 @@
         <Image Source="/Image/Icon/logo_450x443.png"/>
         <Label Content="Поиск автомобиля по Гос.Номеру" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" Grid.Column="1" Margin="20,0,100,0"/>
         <Label Content="Номер:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Height="50" MaxLength="6" Margin="20,0,100,0" VerticalContentAlignment="Center" FontSize="25"/>
+        <TextBox Text="{Binding Number}" Grid.Row="1" Grid.Column="1" Height="50" MaxLength="6" Margin="20,0,100,0" VerticalContentAlignment="Center" FontSize="25"/>
         <Label Content="Регион:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Height="50" MaxLength="6" Margin="20,0,100,0" VerticalContentAlignment="Center" FontSize="25"/>
+        <TextBox Text="{Binding Region}" Grid.Row="2" Grid.Column="1" Height="50" MaxLength="6" Margin="20,0,100,0" VerticalContentAlignment="Center" FontSize="25"/>
         <Button Command="{Binding AddCarOnDatabase}" Content="Добавить" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,100,0" Grid.Row="3" Width="150" Height="50" FontSize="25" >
             <Button.Resources>
                 <Style TargetType="Border">
