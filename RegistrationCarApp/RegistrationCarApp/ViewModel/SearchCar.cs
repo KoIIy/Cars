@@ -1,5 +1,5 @@
 ﻿using RegistarionCarApp.ViewModel;
-using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.Model.Entities;
 using RegistrationCarApp.View.Window;
 using System;
 using System.Collections.Generic;

@@ -26,10 +26,17 @@ namespace RegistrationCarApp.View.Window
         {
             InitializeComponent();
             DataContext = Auth;
+            this.InputBindings.Add(new KeyBinding(Auth.Auth, new KeyGesture(Key.Enter)));
+
         }
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             Auth.Password = PasswordBox.Password;
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

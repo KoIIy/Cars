@@ -1,6 +1,6 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistraionCarApp.View.Window;
-using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.Model.Entities;
 using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
@@ -88,7 +88,7 @@ namespace RegistrationCarApp.ViewModel
                                         return;
                                     }
                                 }
-                                db.Model.Add(new RegistrationCarApp.Model.Entityes.Model { MarkID = MarkId, Name = Model, Year = Year });
+                                db.Model.Add(new RegistrationCarApp.Model.Entities.Model { MarkID = MarkId, Name = Model, Year = Year });
                                 db.SaveChangesAsync();
                                 foreach (Window window in App.Current.Windows)
                                 {

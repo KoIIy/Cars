@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\App.xaml
-8-1126267932
-2-678233388
-40-1124917712
+13-740300098
+21669630335
+47-2142524727
 191240193093
-View\Page\CarAdd.xaml;View\Page\SearchCar\SearchCarOnCarNumber.xaml;View\Page\SearchCar\SearchCarOnInsuranceNumber.xaml;View\Page\SearchCar\SearchCarOnVinNumber.xaml;View\Window\AddMarkOrModelCarWindwo.xaml;View\Window\AuthorizationWindow.xaml;View\Window\EditCarWindow.xaml;View\Window\MainWindow.xaml;
+View\Page\CarAdd.xaml;View\Page\SearchCar\SearchCarOnCarNumber.xaml;View\Page\SearchCar\SearchCarOnInsuranceNumber.xaml;View\Page\SearchCar\SearchCarOnVinNumber.xaml;View\Page\SearchUser\SearchUserOnLogin.xaml;View\Page\SearchUser\SearchUserOnMail.xaml;View\Page\SearchUser\SearchUserOnNumberPhone.xaml;View\Page\UserAdd.xaml;View\Window\AddMarkOrModelCarWindwo.xaml;View\Window\AuthorizationWindow.xaml;View\Window\EditCarWindow.xaml;View\Window\EditUserWindow.xaml;View\Window\MainWindow.xaml;
 
-True
+False
 

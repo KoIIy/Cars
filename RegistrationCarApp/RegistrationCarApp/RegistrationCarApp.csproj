@@ -67,68 +67,70 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\ICommand.cs" />
-    <Compile Include="Model\Car.cs" />
-    <Compile Include="Model\Entityes\Adress.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Car.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Color.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Country.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Locality.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Mark.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Model.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Person.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\Role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\State.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Entityes\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\CarModel.cs" />
+    <Compile Include="Model\Entities\Adress.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Car.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\CarEntitie.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarEntitie.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\CarEntitie.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\CarEntitie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarEntitie.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Color.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Country.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Locality.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Mark.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Model.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Person.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\Role.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\sp_helpdiagrams_Result.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\State.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entities\User.cs">
+      <DependentUpon>CarEntitie.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserSingletone.cs" />
+    <Compile Include="ViewModel\AddUser.cs" />
     <Compile Include="ViewModel\CarAdd\AddCar.cs" />
     <Compile Include="ViewModel\CarAdd\AddMarkOrModel.cs" />
     <Compile Include="ViewModel\EditCar.cs" />
+    <Compile Include="ViewModel\EditUser.cs" />
     <Compile Include="ViewModel\MainClass.cs" />
     <Compile Include="ViewModel\SearchCar.cs" />
+    <Compile Include="ViewModel\SearchUser.cs" />
     <Compile Include="View\Page\CarAdd.xaml.cs">
       <DependentUpon>CarAdd.xaml</DependentUpon>
     </Compile>
@@ -141,6 +143,18 @@
     <Compile Include="View\Page\SearchCar\SearchCarOnVinNumber.xaml.cs">
       <DependentUpon>SearchCarOnVinNumber.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Page\SearchUser\SearchUserOnLogin.xaml.cs">
+      <DependentUpon>SearchUserOnLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\SearchUser\SearchUserOnMail.xaml.cs">
+      <DependentUpon>SearchUserOnMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\SearchUser\SearchUserOnNumberPhone.xaml.cs">
+      <DependentUpon>SearchUserOnNumberPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\UserAdd.xaml.cs">
+      <DependentUpon>UserAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Window\AddMarkOrModelCarWindwo.xaml.cs">
       <DependentUpon>AddMarkOrModelCarWindwo.xaml</DependentUpon>
     </Compile>
@@ -149,6 +163,9 @@
     </Compile>
     <Compile Include="View\Window\EditCarWindow.xaml.cs">
       <DependentUpon>EditCarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Window\EditUserWindow.xaml.cs">
+      <DependentUpon>EditUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Window\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -175,6 +192,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Page\SearchUser\SearchUserOnLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Page\SearchUser\SearchUserOnMail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Page\SearchUser\SearchUserOnNumberPhone.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Page\UserAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Window\AddMarkOrModelCarWindwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Window\EditCarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Window\EditUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,12 +247,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Entityes\Model1.edmx">
+    <EntityDeploy Include="Model\Entities\CarEntitie.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>CarEntitie.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Entityes\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="Model\Entities\CarEntitie.edmx.diagram">
+      <DependentUpon>CarEntitie.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -228,16 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\plus.png" />
-    <Content Include="Model\Entityes\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Entityes\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Icon\logo_450x443.png" />
@@ -245,6 +272,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Entities\CarEntitie.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarEntitie.edmx</DependentUpon>
+      <LastGenOutput>CarEntitie.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Entities\CarEntitie.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CarEntitie.edmx</DependentUpon>
+      <LastGenOutput>CarEntitie.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

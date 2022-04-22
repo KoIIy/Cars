@@ -85,3 +85,13 @@ E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\App.baml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnCarNumber.baml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnInsuranceNumber.baml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnVinNumber.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\UserAdd.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\UserAdd.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\EditUserWindow.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\EditUserWindow.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnLogin.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnMail.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnNumberPhone.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnLogin.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnMail.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchUser\SearchUserOnNumberPhone.baml

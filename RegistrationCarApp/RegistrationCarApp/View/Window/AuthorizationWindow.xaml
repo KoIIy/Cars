@@ -37,8 +37,8 @@
                 <ColumnDefinition Width="117*"/>
                 <ColumnDefinition Width="256*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="200" Margin="10.2,38,0,38" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-            <PasswordBox Name="PasswordBox" PasswordChanged="PasswordBox_PasswordChanged"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="200" Margin="10.2,38,0,38" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <TextBox KeyDown="TextBox_KeyDown" Text="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="200" Margin="10.2,38,0,38" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <PasswordBox KeyDown="TextBox_KeyDown" Name="PasswordBox" PasswordChanged="PasswordBox_PasswordChanged"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="200" Margin="10.2,38,0,38" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
             <Label Grid.Row="0" Grid.Column="0" Content="Логин:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,43,9.8,43" FontSize="15" Height="30" Width="56"/>
             <Label Grid.Row="1" Grid.Column="0" Content="Пароль:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,43,9.8,43" FontSize="15" Height="30" Width="64"/>
         </Grid>

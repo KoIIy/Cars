@@ -2,9 +2,9 @@
 using System.Windows;
 using System.Windows.Annotations;
 using RegistraionCarApp;
-using RegistrationCarApp.Model.Entityes;
-using RegistrationCarApp.View.Window;
 using RegistrationCarApp.Model;
+using RegistrationCarApp.View.Window;
+using RegistrationCarApp.Model.Entities;
 
 namespace RegistarionCarApp.ViewModel
 {

@@ -22,7 +22,7 @@
         <Image Source="/Image/Icon/logo_450x443.png" Grid.ColumnSpan="2" Margin="0,0,567,0"/>
         <Label Content="Поиск автомобиля по Номеру страховки" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" Grid.Column="1" Margin="20.2,33,0,33" Height="Auto" Width="544"/>
         <Label Grid.RowSpan="2" Content="Номер страховки:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25" Grid.ColumnSpan="2" Height="Auto" Margin="0,92,567,93.6" Width="213"/>
-        <TextBox Grid.RowSpan="2" Text="{Binding InsuranceNumber}" Height="50" Grid.Row="1" Grid.Column="1" MaxLength="6" Margin="20.2,31,100,31.8" VerticalContentAlignment="Center" FontSize="25"/>
+        <TextBox Grid.RowSpan="2" Text="{Binding InsuranceNumber}" Height="50" Grid.Row="1" Grid.Column="1"  Margin="20.2,31,100,31.8" VerticalContentAlignment="Center" FontSize="25"/>
 
         <Button Command="{Binding SearchOnInsuranceNumber}" Content="Найти" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,31.4,100,30.6" Grid.Row="3" Width="150" Height="50" FontSize="25" >
             <Button.Resources>

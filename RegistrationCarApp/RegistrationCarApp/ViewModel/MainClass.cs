@@ -1,7 +1,7 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistraionCarApp.View.Window;
 using RegistrationCarApp.Model;
-using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.Model.Entities;
 using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
@@ -17,6 +17,7 @@ namespace RegistrationCarApp.ViewModel
     public class MainClass : BaseViewModel
     {
         public CarAdd carAdd = new CarAdd();
+        public UserAdd userAdd = new UserAdd();
         public void Initial()
         {
 
@@ -97,9 +98,10 @@ namespace RegistrationCarApp.ViewModel
                     {
                         foreach (Window window in Application.Current.Windows)
                         {
-                            SearchCarOnCarNumber searchCarOnCarNumber = new SearchCarOnCarNumber();
                             if (window is MainWindow)
                             {
+
+                                SearchCarOnCarNumber searchCarOnCarNumber = new SearchCarOnCarNumber();
                                 (window as MainWindow).MainFrame.Navigate(searchCarOnCarNumber);
                             }
                         }
@@ -116,9 +118,10 @@ namespace RegistrationCarApp.ViewModel
                     {
                         foreach (Window window in Application.Current.Windows)
                         {
-                           SearchCarOnVinNumber searchCarOnCarVinNumber = new SearchCarOnVinNumber();
                             if (window is MainWindow)
                             {
+
+                                SearchCarOnVinNumber searchCarOnCarVinNumber = new SearchCarOnVinNumber();
                                 (window as MainWindow).MainFrame.Navigate(searchCarOnCarVinNumber);
                             }
                         }
@@ -135,15 +138,93 @@ namespace RegistrationCarApp.ViewModel
                     {
                         foreach (Window window in Application.Current.Windows)
                         {
-                            SearchCarOnInsuranceNumber searchCarOnCarInsuranceNumber = new SearchCarOnInsuranceNumber();
                             if (window is MainWindow)
                             {
+
+                                SearchCarOnInsuranceNumber searchCarOnCarInsuranceNumber = new SearchCarOnInsuranceNumber();
                                 (window as MainWindow).MainFrame.Navigate(searchCarOnCarInsuranceNumber);
                             }
                         }
                     }));
             }
         }
+        private RelayCommand openAddUserPage;
+        public RelayCommand OpenAddUserPage
+        {
+            get
+            {
+                return openAddUserPage ?? (
+                    openAddUserPage = new RelayCommand(obj =>
+                    {
 
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is MainWindow)
+                            {
+                                (window as MainWindow).MainFrame.Navigate(userAdd);
+                            }
+                        }
+                    }
+                    ));
+            }
+        }
+        private RelayCommand openSearchUserOnLogin;
+        public RelayCommand OpenSearchUserOnLogin
+        {
+            get
+            {
+                return openSearchUserOnLogin ?? (
+                    openSearchUserOnLogin = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is MainWindow)
+                            {
+
+                                SearchUserOnLogin searchUserOnLogin = new SearchUserOnLogin();
+                                (window as MainWindow).MainFrame.Navigate(searchUserOnLogin);
+                            }
+                        }
+                    }));
+            }
+        }
+        private RelayCommand openSearchUserOnMail;
+        public RelayCommand OpenSearchUserOnMail
+        {
+            get
+            {
+                return openSearchUserOnMail ?? (
+                    openSearchUserOnMail = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is MainWindow)
+                            {
+                                SearchUserOnMail searchUserOnMail = new SearchUserOnMail();
+                                (window as MainWindow).MainFrame.Navigate(searchUserOnMail);
+                            }
+                        }
+                    }));
+            }
+        }
+        private RelayCommand openSearchUserOnNumberPhone;
+        public RelayCommand OpenSearchUserOnNumberPhone
+        {
+            get
+            {
+                return openSearchUserOnNumberPhone ?? (
+                    openSearchUserOnNumberPhone = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is MainWindow)
+                            {
+                                SearchUserOnNumberPhone searchUserOnNumberPhone = new SearchUserOnNumberPhone();
+                                (window as MainWindow).MainFrame.Navigate(searchUserOnNumberPhone);
+                            }
+                        }
+                    }));
+            }
+        }
     }
 }

@@ -26,6 +26,9 @@ namespace RegistrationCarApp.View.Window
         {
             InitializeComponent();
             DataContext = addMarkOrModel;
+
+            this.InputBindings.Add(new KeyBinding(addMarkOrModel.Add, new KeyGesture(Key.Enter)));
+
         }
     }
 }

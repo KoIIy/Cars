@@ -12,30 +12,28 @@
             <RowDefinition Height="79*"/>
         </Grid.RowDefinitions>
         <Menu Height="25" Grid.RowSpan="1">
-            <MenuItem Header="Главная">
-                <MenuItem Header="Добавить автомобиль" Command="{Binding OpenAddCarPage}">
+            <MenuItem Header="Автомобиль">
+                <MenuItem Header="Добавить" Command="{Binding OpenAddCarPage}">
                 </MenuItem>
-                <MenuItem Header="Поиск авто">
+                <MenuItem Header="Поиск">
                     <MenuItem Header="По номеру авто" Command="{Binding OpenSearchCarOnCarNumber}"/>
                     <MenuItem Header="По VIN номеру" Command="{Binding OpenSearchCarOnCarVinNumber}"/>
                     <MenuItem Header="По номеру страховки" Command="{Binding OpenSearchCarOnCarInsuranceNumber}"/>
 
                 </MenuItem>
-                <MenuItem Header="Выйти из аккаунта" Command="{Binding LogOut}">
 
-                </MenuItem>
-                <MenuItem Header="Выход"></MenuItem>
             </MenuItem>
-            <MenuItem Header ="для Администратора" Visibility="Collapsed">
-                <MenuItem Header="Добавить пользователя"/>
-                <MenuItem Header="Поиск пользователя">
-                    <MenuItem Header="Поиск по Почте"/>
-                    <MenuItem Header="Поиск по Логину"/>
-                    <MenuItem Header="Поиск по Номеру телефона"/>
+            <MenuItem Header ="Пользователи" Name="forAdmin" Visibility="Collapsed">
+                <MenuItem Header="Добавить пользователя" Command="{Binding OpenAddUserPage}"/>
+                <MenuItem Header="Поиск">
+                    <MenuItem Header="По Почте" Command="{Binding OpenSearchUserOnMail}"/>
+                    <MenuItem Header="По Логину" Command="{Binding OpenSearchUserOnLogin}"/>
+                    <MenuItem Header="По Номеру телефона" Command="{Binding OpenSearchUserOnNumberPhone}"/>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Справка" Click="MenuItem_Click">
-            </MenuItem>
+            <MenuItem Header="Выйти из аккаунта" Command="{Binding LogOut}">
+                </MenuItem>
+            <MenuItem Header="Выход" Command="{Binding Exit}"></MenuItem>
         </Menu>
         <Frame x:Name="MainFrame" Grid.Row="1" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
     </Grid>

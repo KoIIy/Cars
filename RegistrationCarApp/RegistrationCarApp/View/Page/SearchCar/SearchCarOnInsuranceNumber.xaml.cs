@@ -26,6 +26,8 @@ namespace RegistrationCarApp.View.Page
         {
             InitializeComponent();
             DataContext = searchCar;
+
+            this.InputBindings.Add(new KeyBinding(searchCar.SearchOnInsuranceNumber, new KeyGesture(Key.Enter)));
         }
     }
 }

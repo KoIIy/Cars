@@ -8,4 +8,9 @@ FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\AddMarkOrMod
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\AuthorizationWindow.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\EditCarWindow.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\MainWindow.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\UserAdd.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\EditUserWindow.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchUser\SearchUserOnLogin.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchUser\SearchUserOnMail.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchUser\SearchUserOnNumberPhone.xaml;;
 

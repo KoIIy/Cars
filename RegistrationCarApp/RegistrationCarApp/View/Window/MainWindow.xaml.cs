@@ -1,4 +1,5 @@
-﻿using RegistrationCarApp.Model.Entityes;
+﻿using RegistrationCarApp.Model;
+using RegistrationCarApp.Model.Entities;
 using RegistrationCarApp.View.Window;
 using RegistrationCarApp.ViewModel;
 using System;
@@ -28,6 +29,10 @@ namespace RegistraionCarApp.View.Window
             InitializeComponent();
             DataContext = mainClass;
             mainClass.Initial();
+            if (UserSingletone.getInstance().RoleID == 1)
+                forAdmin.Visibility = Visibility.Visible;
+            else
+                forAdmin.Visibility = Visibility.Collapsed;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

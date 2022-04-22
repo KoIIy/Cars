@@ -1,6 +1,6 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistrationCarApp.Model;
-using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.Model.Entities;
 using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
@@ -517,6 +517,11 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var car in db.Car)
                             {
+                                if (car.ColorID == colorID && car.ModelID == ModelID && car.Number == carNumber && car.Region == carRegion && car.VIN == VinNumber && car.Year == Year && car.OwnerID == Id && car.InsuranceNumber == InsuranceNumber)
+                                {
+                                    MessageBox.Show("Автомобиль с такими данными уже существует");
+                                    return;
+                                }
                                 if (car.VIN == VinNumber)
                                 {
                                     MessageBox.Show("Автомобиль с таким VIN уже существует");
@@ -532,15 +537,10 @@ namespace RegistrationCarApp.ViewModel
                                     MessageBox.Show("Автомобиль с таким номером уже существует");
                                     return;
                                 }
-                                if (car.ColorID == colorID && car.ModelID == ModelID && car.Number == carNumber && car.Region == carRegion && car.VIN == VinNumber && car.Year == Year && car.OwnerID == Id && car.InsuranceNumber == InsuranceNumber)
-                                {
-                                    MessageBox.Show("Автомобиль с такими данными уже существует");
-                                    return;
-                                }
                             }
                             if (!exist)
                             {
-                                db.Car.Add(new Model.Entityes.Car { ModelID = ModelID, Number = carNumber, Region = carRegion, VIN = VinNumber, ColorID = colorID, InsuranceNumber = InsuranceNumber, OwnerID = Id, Year = Year });
+                                db.Car.Add(new Model.Entities.Car { ModelID = ModelID, Number = carNumber, Region = carRegion, VIN = VinNumber, ColorID = colorID, InsuranceNumber = InsuranceNumber, OwnerID = Id, Year = Year });
                                 MessageBox.Show("Выполнено");
                             }
                             db.SaveChanges();
