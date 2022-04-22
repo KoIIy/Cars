@@ -66,9 +66,10 @@ namespace RegistrationCarApp.ViewModel
         /// <summary>
         /// метод позволяет обновить список марк в Классе AddCar
         /// </summary>
-        public void UpdateMark(object comboBox)
+        public void UpdateMark(object comboBox, object markComboBox)
         {
             (comboBox as ComboBox).SelectedIndex = -1;
+            (markComboBox as ComboBox).SelectedIndex = -1;
             Marks = new();
             using (var db = new CarsEntities())
             {
@@ -539,7 +540,7 @@ namespace RegistrationCarApp.ViewModel
                             }
                             if (!exist)
                             {
-                                db.Car.Add(new Car { ModelID = ModelID, Number = carNumber, Region = carRegion, VIN = VinNumber, ColorID = colorID, InsuranceNumber = InsuranceNumber, OwnerID = Id, Year = Year });
+                                db.Car.Add(new Model.Entityes.Car { ModelID = ModelID, Number = carNumber, Region = carRegion, VIN = VinNumber, ColorID = colorID, InsuranceNumber = InsuranceNumber, OwnerID = Id, Year = Year });
                                 MessageBox.Show("Выполнено");
                             }
                             db.SaveChanges();

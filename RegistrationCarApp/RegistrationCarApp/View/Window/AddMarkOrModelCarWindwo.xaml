@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistrationCarApp.View.Window"
         mc:Ignorable="d"
-        Title="" Height="271.847" Width="517.595" Closing="Window_Closing">
+        Title="" Height="271.847" Icon="/Image/Icon/logo_91x90.png" Width="517.595" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="18*"/>

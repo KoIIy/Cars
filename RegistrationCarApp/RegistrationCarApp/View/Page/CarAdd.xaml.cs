@@ -32,7 +32,8 @@ namespace RegistrationCarApp.View.Page
         
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (MarkComboBox.SelectedIndex == -1)
+                return;
             addCar.selectMark(MarkComboBox.SelectedIndex,ModelComboBox);
         }
 
@@ -47,7 +48,7 @@ namespace RegistrationCarApp.View.Page
         /// </summary>
         public void UpdateMark()
         {
-            addCar.UpdateMark(ModelComboBox);
+            addCar.UpdateMark(ModelComboBox,MarkComboBox);
         }
     }
 }

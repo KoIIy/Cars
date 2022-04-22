@@ -76,3 +76,12 @@ E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\CarAd
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\CarAdd.baml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\AddMarkOrModelCarWindwo.g.cs
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\AddMarkOrModelCarWindwo.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\EditCarWindow.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\EditCarWindow.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnCarNumber.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnInsuranceNumber.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnVinNumber.g.cs
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\App.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnCarNumber.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnInsuranceNumber.baml
+E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Page\SearchCar\SearchCarOnVinNumber.baml

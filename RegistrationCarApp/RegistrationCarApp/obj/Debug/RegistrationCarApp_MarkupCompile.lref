@@ -1,7 +1,11 @@
 ﻿
-
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\App.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\CarAdd.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchCar\SearchCarOnCarNumber.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchCar\SearchCarOnInsuranceNumber.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Page\SearchCar\SearchCarOnVinNumber.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\AddMarkOrModelCarWindwo.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\AuthorizationWindow.xaml;;
+FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\EditCarWindow.xaml;;
 FE:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\View\Window\MainWindow.xaml;;
 

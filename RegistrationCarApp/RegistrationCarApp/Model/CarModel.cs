@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RegistrationCarApp.Model
 {
-    class CarModel
+    public class CarModel
     {
         public string Name
         {

@@ -1,6 +1,7 @@
 ﻿using RegistarionCarApp.ViewModel;
 using RegistraionCarApp.View.Window;
 using RegistrationCarApp.Model.Entityes;
+using RegistrationCarApp.View.Page;
 using RegistrationCarApp.View.Window;
 using System;
 using System.Collections.Generic;
@@ -91,6 +92,18 @@ namespace RegistrationCarApp.ViewModel
                                 db.SaveChangesAsync();
                                 foreach (Window window in App.Current.Windows)
                                 {
+
+                                    if (window is MainWindow)
+                                    {
+                                        (window as MainWindow).mainClass.carAdd.UpdateMark();
+                                    }
+                                    if (window is EditCarWindow)
+                                    {
+                                        (window as EditCarWindow).UpdateMark();
+                                    }
+                                }
+                                foreach (Window window in App.Current.Windows)
+                                {
                                     
                                     if (window is AddMarkOrModelCar)
                                     {
@@ -117,6 +130,7 @@ namespace RegistrationCarApp.ViewModel
                         {
                             if (window is AddMarkOrModelCar)
                             {
+                                
                                 window.Close();
                             }
                         }

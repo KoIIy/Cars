@@ -5,8 +5,239 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistrationCarApp.View.Window"
         mc:Ignorable="d"
-        Title="EditCarWindow" Height="450" Width="800">
+        Title="Редактирование" Icon="/Image/Icon/logo_91x90.png" Height="480" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="271*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"  Content="Страна*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding Country}" Grid.Row="0" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Grid.Row="1" Grid.Column="0"  Content="Область*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding State}" Grid.Row="1" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+
+            <Label Grid.Row="2" Grid.Column="0"  Content="Населённый пункт*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding Locality}" Grid.Row="2" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="3" Grid.Column="0"  Content="Улица*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding Street}" Grid.Row="3" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="4" Grid.Column="0"  Content="Номер дома*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding NumberHome}" Grid.Row="4" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="5" Grid.Column="0"  Content="Номер квартиры:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding ApartmentNumber}" Grid.Row="5" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="6" Grid.Column="0"  Content="Почтовый индекс*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding PostCode}" Grid.Row="6" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="7" Grid.Column="0"  Content="Имя*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding FirstName}" Grid.Row="7" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="8" Grid.Column="0"  Content="Фамилия*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding LastName}" Grid.Row="8" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="9" Grid.Column="0"  Content="Отчество:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox Text="{Binding MidleName}" Grid.Row="9" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="10" Grid.Column="0"  Content="Номер телефона*:" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Height="Auto" Width="Auto"/>
+            <TextBox  Text="{Binding NumberPhone}" Grid.Row="10" Grid.Column="1" Margin="0,6,50,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+
+                </TextBox.Resources>
+            </TextBox>
+        </Grid>
+        <Grid Grid.Column="1" Background="Black"/>
+        <Grid Grid.Column="2"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="46*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="153*"/>
+                <ColumnDefinition Width="247*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"  Content="Марка*:" HorizontalAlignment="Right" Margin="0,8,6.8,8.4" VerticalAlignment="Center" Height="26" Width="54"/>
+            <ComboBox Name="MarkComboBox" Grid.Row="0" Grid.Column="1" Margin="3,6.5,90,6.5" VerticalContentAlignment="Center" FontSize="15" ItemsSource="{Binding Marks}" SelectionChanged="ComboBox_SelectionChanged"  DisplayMemberPath="Name">
+            </ComboBox>
+            <Button Grid.Row="0" Grid.Column="1" Margin="160,6.5,50,6.5" Command="{Binding AddMarkOrModel}">
+                <Image Source="/Image/plus.png"/>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label  Grid.Row="1" Grid.Column="0"  Content="Модель*:" HorizontalAlignment="Right" Margin="0,7.6,6.8,6.2" VerticalAlignment="Center"  Height="27" Width="61"/>
+            <ComboBox Name="ModelComboBox" Grid.Row="1" Grid.Column="1" Margin="3,6.5,90,6.5" VerticalContentAlignment="Center" ItemsSource="{Binding Models}" SelectionChanged="ComboBox_SelectionChanged_1"  DisplayMemberPath="Name" FontSize="15">
+            </ComboBox>
+            <Button Grid.Row="1" Grid.Column="1" Margin="160,6.5,50,6.5" Command="{Binding AddMarkOrModel}">
+                <Image Source="/Image/plus.png"/>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label Grid.Row="2" Grid.Column="0"  Content="Номер автомобиля:" HorizontalAlignment="Right" Margin="0,6.8,6.8,7" VerticalAlignment="Center" Height="27" Width="120" Grid.RowSpan="2"/>
+            <TextBox  Text="{Binding CarNumber}" Grid.Row="2" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15" Grid.RowSpan="2">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="4" Grid.Column="0"  Content="Регион автомобиля:" HorizontalAlignment="Right" Margin="0,7,6.8,6.8" VerticalAlignment="Center" Height="27" Width="120"/>
+            <TextBox  Text="{Binding CarRegion}" Grid.Row="4" Grid.Column="1" Margin="3.2,6,50.2,5.8" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="5" Grid.Column="0"  Content="VIN номер автомобиля*:" HorizontalAlignment="Right" Margin="0,7.2,6.8,6.6" VerticalAlignment="Center" Height="27" Width="146"/>
+            <TextBox  Text="{Binding VinNumber}" Grid.Row="5" Grid.Column="1" Margin="3.2,6.2,50.2,5.6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="6" Grid.Column="0"  Content="Номер страховки*:" HorizontalAlignment="Right" Margin="0,7.4,6.8,7.4" VerticalAlignment="Center" Height="26" Width="114"/>
+            <TextBox  Text="{Binding InsuranceNumber}" Grid.Row="6" Grid.Column="1" Margin="3.2,5.4,50.2,5.4" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="7" Grid.Column="0"  Content="Цвет*:" HorizontalAlignment="Right" Margin="0,6.6,6.8,7.2" VerticalAlignment="Center" Height="27" Width="45"/>
+            <TextBox  Text="{Binding Color}" Grid.Row="7" Grid.Column="1" Margin="3.2,5.6,50.2,6.2" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Grid.Row="8" Grid.Column="0"  Content="Год*:" HorizontalAlignment="Right" Margin="0,6.8,6.8,7" VerticalAlignment="Center" Height="27" Width="37"/>
+            <TextBox  Text="{Binding Year}" Grid.Row="8" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Label Content="Пункты со знаком '*' обязательны к заполнению" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="Red" Height="25" Margin="0,0,0.2,1" Width="278"/>
+            <Button Command="{Binding Edit}" Content="Подтвердить" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,8,20.2,7.6" Grid.Row="11" Width="100" Height="30" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Content="Отмена" Grid.Column="1" Command="{Binding Cancel}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,8,140.2,7.6" Grid.Row="11" Width="100" Height="30" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

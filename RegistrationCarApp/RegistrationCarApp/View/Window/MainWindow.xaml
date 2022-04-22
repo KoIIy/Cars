@@ -17,8 +17,8 @@
                 </MenuItem>
                 <MenuItem Header="Поиск авто">
                     <MenuItem Header="По номеру авто" Command="{Binding OpenSearchCarOnCarNumber}"/>
-                    <MenuItem Header="По VIN номеру"/>
-                    <MenuItem Header="По номеру страховки"/>
+                    <MenuItem Header="По VIN номеру" Command="{Binding OpenSearchCarOnCarVinNumber}"/>
+                    <MenuItem Header="По номеру страховки" Command="{Binding OpenSearchCarOnCarInsuranceNumber}"/>
 
                 </MenuItem>
                 <MenuItem Header="Выйти из аккаунта" Command="{Binding LogOut}">
@@ -37,6 +37,6 @@
             <MenuItem Header="Справка" Click="MenuItem_Click">
             </MenuItem>
         </Menu>
-        <Frame x:Name="MainFrame" Grid.Row="1" Height="Auto" Width="Auto" />
+        <Frame x:Name="MainFrame" Grid.Row="1" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

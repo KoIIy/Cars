@@ -10,7 +10,7 @@ namespace RegistarionCarApp.ViewModel
 {
     class Authorization : BaseViewModel
     {
-        private string login = "", password = "";
+        private string login, password;
         public string Login
         {
             get

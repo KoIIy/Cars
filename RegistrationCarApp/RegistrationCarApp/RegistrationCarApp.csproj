@@ -132,8 +132,14 @@
     <Compile Include="View\Page\CarAdd.xaml.cs">
       <DependentUpon>CarAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Page\SearchCarOnCarNumber.xaml.cs">
+    <Compile Include="View\Page\SearchCar\SearchCarOnCarNumber.xaml.cs">
       <DependentUpon>SearchCarOnCarNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\SearchCar\SearchCarOnInsuranceNumber.xaml.cs">
+      <DependentUpon>SearchCarOnInsuranceNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page\SearchCar\SearchCarOnVinNumber.xaml.cs">
+      <DependentUpon>SearchCarOnVinNumber.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Window\AddMarkOrModelCarWindwo.xaml.cs">
       <DependentUpon>AddMarkOrModelCarWindwo.xaml</DependentUpon>
@@ -157,7 +163,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Page\SearchCarOnCarNumber.xaml">
+    <Page Include="View\Page\SearchCar\SearchCarOnCarNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Page\SearchCar\SearchCarOnInsuranceNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Page\SearchCar\SearchCarOnVinNumber.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

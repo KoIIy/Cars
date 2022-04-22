@@ -17,15 +17,16 @@ namespace RegistrationCarApp.ViewModel
     public class MainClass : BaseViewModel
     {
         public CarAdd carAdd = new CarAdd();
-        public MainClass()
+        public void Initial()
         {
-            foreach (Window window in App.Current.Windows)
+
+            foreach (Window window in Application.Current.Windows)
             {
                 if (window is MainWindow)
                 {
                     (window as MainWindow).MainFrame.Navigate(carAdd);
                 }
-            } 
+            }
         }
         private RelayCommand logOut;
         public RelayCommand LogOut
@@ -100,6 +101,44 @@ namespace RegistrationCarApp.ViewModel
                             if (window is MainWindow)
                             {
                                 (window as MainWindow).MainFrame.Navigate(searchCarOnCarNumber);
+                            }
+                        }
+                    }));
+            }
+        }
+        private RelayCommand openSearchCarOnCarVinNumber;
+        public RelayCommand OpenSearchCarOnCarVinNumber
+        {
+            get
+            {
+                return openSearchCarOnCarVinNumber ?? (
+                    openSearchCarOnCarVinNumber = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                           SearchCarOnVinNumber searchCarOnCarVinNumber = new SearchCarOnVinNumber();
+                            if (window is MainWindow)
+                            {
+                                (window as MainWindow).MainFrame.Navigate(searchCarOnCarVinNumber);
+                            }
+                        }
+                    }));
+            }
+        }
+        private RelayCommand openSearchCarOnCarInsuranceNumber;
+        public RelayCommand OpenSearchCarOnCarInsuranceNumber
+        {
+            get
+            {
+                return openSearchCarOnCarInsuranceNumber ?? (
+                    openSearchCarOnCarInsuranceNumber = new RelayCommand(obj =>
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            SearchCarOnInsuranceNumber searchCarOnCarInsuranceNumber = new SearchCarOnInsuranceNumber();
+                            if (window is MainWindow)
+                            {
+                                (window as MainWindow).MainFrame.Navigate(searchCarOnCarInsuranceNumber);
                             }
                         }
                     }));

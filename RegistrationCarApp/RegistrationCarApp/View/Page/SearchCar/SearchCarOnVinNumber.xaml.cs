@@ -1,5 +1,4 @@
-﻿using RegistraionCarApp.View.Window;
-using RegistrationCarApp.ViewModel;
+﻿using RegistrationCarApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +11,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RegistrationCarApp.View.Window
+namespace RegistrationCarApp.View.Page
 {
     /// <summary>
-    /// Логика взаимодействия для AddMarkOrModelCar.xaml
+    /// Логика взаимодействия для SearchCarOnVinNumber.xaml
     /// </summary>
-    public partial class AddMarkOrModelCar 
+    public partial class SearchCarOnVinNumber
     {
-        AddMarkOrModel addMarkOrModel = new AddMarkOrModel();
-        public AddMarkOrModelCar()
+        SearchCar searchCar = new SearchCar();
+        public SearchCarOnVinNumber()
         {
             InitializeComponent();
-            DataContext = addMarkOrModel;
+            DataContext = searchCar;
         }
     }
 }
