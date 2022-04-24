@@ -352,7 +352,7 @@ namespace RegistrationCarApp.ViewModel
                             int Id = -1;
                             foreach (var country in db.Country)
                             {
-                                if (country.Name == Country)
+                                if (country.Name.ToUpper() == Country.ToUpper())
                                 {
                                     exist = true;
                                     Id = country.CountryID;
@@ -366,7 +366,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var state in db.State)
                             {
-                                if (state.Name == State && state.CountryId == Id)
+                                if (state.Name.ToUpper() == State.ToUpper() && state.CountryId == Id)
                                 {
                                     exist = true;
                                     Id = state.StateID;
@@ -380,7 +380,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var locality in db.Locality)
                             {
-                                if (locality.Name == Locality && locality.StateId == Id)
+                                if (locality.Name.ToUpper() == Locality.ToUpper() && locality.StateId == Id)
                                 {
                                     exist = true;
                                     Id = locality.LocalityID;
@@ -394,7 +394,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var adress in db.Adress)
                             {
-                                if (adress.NumberOfHome == NumberHome && adress.Street == Street && adress.LocalityId == Id && adress.PostCode == PostCode && adress.NumberOfApartment == ApartmentNumber)
+                                if (adress.NumberOfHome == NumberHome && adress.Street.ToUpper() == Street.ToUpper() && adress.LocalityId == Id && adress.PostCode == PostCode && adress.NumberOfApartment == ApartmentNumber)
                                 {
                                     exist = true;
                                     Id = adress.AdressID;

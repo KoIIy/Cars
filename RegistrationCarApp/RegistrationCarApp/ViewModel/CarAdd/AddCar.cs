@@ -434,7 +434,7 @@ namespace RegistrationCarApp.ViewModel
                             int Id = -1, colorID = -1;
                             foreach (var country in db.Country)
                             {
-                                if (country.Name == Country)
+                                if (country.Name.ToUpper() == Country.ToUpper())
                                 {
                                     exist = true;
                                     Id = country.CountryID;
@@ -448,7 +448,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var state in db.State)
                             {
-                                if (state.Name == State && state.CountryId == Id)
+                                if (state.Name.ToUpper() == State.ToUpper() && state.CountryId == Id)
                                 {
                                     exist = true;
                                     Id = state.StateID;
@@ -462,7 +462,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var locality in db.Locality)
                             {
-                                if (locality.Name == Locality && locality.StateId == Id)
+                                if (locality.Name.ToUpper() == Locality.ToUpper() && locality.StateId == Id)
                                 {
                                     exist = true;
                                     Id = locality.LocalityID;
@@ -476,7 +476,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var adress in db.Adress)
                             {
-                                if (adress.NumberOfHome == NumberHome && adress.Street == Street && adress.LocalityId == Id && adress.PostCode == PostCode && adress.NumberOfApartment == ApartmentNumber)
+                                if (adress.NumberOfHome == NumberHome && adress.Street.ToUpper() == Street.ToUpper() && adress.LocalityId == Id && adress.PostCode == PostCode && adress.NumberOfApartment == ApartmentNumber)
                                 {
                                     exist = true;
                                     Id = adress.AdressID;
@@ -490,7 +490,7 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var person in db.Person)
                             {
-                                if (person.Name == FirstName && person.MiddleName == MidleName && person.LastName == LastName && person.AdressID == Id && person.NumberPhone == NumberPhone)
+                                if (person.Name.ToUpper() == FirstName.ToUpper() && person.MiddleName.ToUpper() == MidleName.ToUpper() && person.LastName.ToUpper() == LastName.ToUpper() && person.AdressID == Id && person.NumberPhone == NumberPhone)
                                 {
                                     exist = true;
                                     Id = person.PersonID;
@@ -503,7 +503,7 @@ namespace RegistrationCarApp.ViewModel
                             }
                             foreach (var color in db.Color)
                             {
-                                if (color.Name == Color)
+                                if (color.Name.ToUpper() == Color.ToUpper())
                                 {
                                     exist = true;
                                     colorID = color.ColorID;
@@ -517,22 +517,22 @@ namespace RegistrationCarApp.ViewModel
                             exist = false;
                             foreach (var car in db.Car)
                             {
-                                if (car.ColorID == colorID && car.ModelID == ModelID && car.Number == carNumber && car.Region == carRegion && car.VIN == VinNumber && car.Year == Year && car.OwnerID == Id && car.InsuranceNumber == InsuranceNumber)
+                                if (car.ColorID == colorID && car.ModelID == ModelID && car.Number.ToUpper() == carNumber.ToUpper() && car.Region.ToUpper() == carRegion.ToUpper() && car.VIN.ToUpper() == VinNumber.ToUpper() && car.Year == Year && car.OwnerID == Id && car.InsuranceNumber.ToUpper() == InsuranceNumber.ToUpper())
                                 {
                                     MessageBox.Show("Автомобиль с такими данными уже существует");
                                     return;
                                 }
-                                if (car.VIN == VinNumber)
+                                if (car.VIN.ToUpper() == VinNumber.ToUpper())
                                 {
                                     MessageBox.Show("Автомобиль с таким VIN уже существует");
                                     return;
                                 }
-                                if (car.InsuranceNumber == InsuranceNumber)
+                                if (car.InsuranceNumber.ToUpper() == InsuranceNumber.ToUpper())
                                 {
                                     MessageBox.Show("Автомобиль с таким номером страховки уже существует");
                                     return;
                                 }
-                                if (car.Number == CarNumber && car.Region == carRegion && car.Number != "" && carRegion != "")
+                                if (car.Number.ToUpper() == CarNumber.ToUpper() && car.Region.ToUpper() == carRegion.ToUpper() && !string.IsNullOrEmpty(car.Number) && !string.IsNullOrEmpty(car.Region))
                                 {
                                     MessageBox.Show("Автомобиль с таким номером уже существует");
                                     return;

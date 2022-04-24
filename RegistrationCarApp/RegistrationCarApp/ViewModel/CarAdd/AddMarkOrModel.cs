@@ -70,7 +70,7 @@ namespace RegistrationCarApp.ViewModel
                                 int MarkId = -1;
                                 foreach (var mark in db.Mark)
                                 {
-                                    if (mark.Name == Mark)
+                                    if (mark.Name.ToUpper() == Mark.ToUpper())
                                     {
                                         exists = true;
                                         MarkId = mark.MarkID;
@@ -82,7 +82,7 @@ namespace RegistrationCarApp.ViewModel
                                 }
                                 foreach (var model in db.Model)
                                 {
-                                    if (model.Name == Mark&& model.Year == Year)
+                                    if (model.Name.ToUpper() == Mark.ToUpper() && model.Year == Year)
                                     {
                                         MessageBox.Show("Такая модель уже существует");
                                         return;

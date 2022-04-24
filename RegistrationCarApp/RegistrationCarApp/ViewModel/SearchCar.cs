@@ -97,7 +97,7 @@ namespace RegistrationCarApp.ViewModel
                         {
                             foreach (var car in db.Car)
                             {
-                                if (car.Number == Number && car.Region == Region)
+                                if (car.Number.ToUpper() == Number.ToUpper() && car.Region.ToUpper() == Region.ToUpper())
                                 {
                                     var editCarWindow = new EditCarWindow();
                                     editCarWindow.editCar.carId = car.CarID;
@@ -129,7 +129,7 @@ namespace RegistrationCarApp.ViewModel
                             
                             foreach (var car in db.Car)
                             {
-                                if (car.VIN == VinNumber)
+                                if (car.VIN.ToUpper() == VinNumber.ToUpper())
                                 {
                                     var editCarWindow = new EditCarWindow();
                                     editCarWindow.editCar.carId = car.CarID;
@@ -161,7 +161,7 @@ namespace RegistrationCarApp.ViewModel
                         {
                             foreach (var car in db.Car)
                             {
-                                if (car.InsuranceNumber == InsuranceNumber)
+                                if (car.InsuranceNumber.ToUpper() == InsuranceNumber.ToUpper())
                                 {
                                     var editCarWindow = new EditCarWindow();
                                     editCarWindow.editCar.carId = car.CarID;

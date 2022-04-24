@@ -21,7 +21,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Image Source="/Image/Icon/logo_450x443.png" Grid.ColumnSpan="2" Margin="0,0,567,0"/>
-            <Label Content="Поиск полбзователя по Логину" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" Grid.Column="1" Margin="20.2,33,0,33" Height="Auto" Width="544"/>
+            <Label Content="Поиск пользователя по Логину" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="27" Grid.Column="1" Margin="20.2,33,0,33" Height="Auto" Width="544"/>
             <Label Grid.RowSpan="2" Content="Логин:" HorizontalContentAlignment="Right" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="25" Grid.ColumnSpan="2" Height="Auto" Margin="0,92,567,93.6" Width="213"/>
             <TextBox Grid.RowSpan="2" Text="{Binding Login}" Height="50" Grid.Row="1" Grid.Column="1"  Margin="20.2,31,100,31.8" VerticalContentAlignment="Center" FontSize="25"/>
 

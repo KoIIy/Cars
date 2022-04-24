@@ -176,7 +176,7 @@
                 </Button.Resources>
             </Button>
             <Label Grid.Row="2" Grid.Column="0"  Content="Номер автомобиля:" HorizontalAlignment="Right" Margin="0,6.8,6.8,7" VerticalAlignment="Center" Height="27" Width="120" Grid.RowSpan="2"/>
-            <TextBox  Text="{Binding CarNumber}" Grid.Row="2" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15" Grid.RowSpan="2">
+            <TextBox  Text="{Binding CarNumber}" MaxLength="6" Grid.Row="2" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15" Grid.RowSpan="2">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -184,7 +184,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Grid.Row="4" Grid.Column="0"  Content="Регион автомобиля:" HorizontalAlignment="Right" Margin="0,7,6.8,6.8" VerticalAlignment="Center" Height="27" Width="120"/>
-            <TextBox  Text="{Binding CarRegion}" Grid.Row="4" Grid.Column="1" Margin="3.2,6,50.2,5.8" VerticalContentAlignment="Center" FontSize="15">
+            <TextBox  Text="{Binding CarRegion}" MaxLength="10" Grid.Row="4" Grid.Column="1" Margin="3.2,6,50.2,5.8" VerticalContentAlignment="Center" FontSize="15">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -216,7 +216,7 @@
                 </TextBox.Resources>
             </TextBox>
             <Label Grid.Row="8" Grid.Column="0"  Content="Год*:" HorizontalAlignment="Right" Margin="0,6.8,6.8,7" VerticalAlignment="Center" Height="27" Width="37"/>
-            <TextBox  Text="{Binding Year}" Grid.Row="8" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15">
+            <TextBox  Text="{Binding Year}" MaxLength="4" Grid.Row="8" Grid.Column="1" Margin="3.2,5.8,50.2,6" VerticalContentAlignment="Center" FontSize="15">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>

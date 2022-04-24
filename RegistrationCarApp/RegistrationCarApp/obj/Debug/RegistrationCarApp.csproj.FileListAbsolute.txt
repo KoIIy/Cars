@@ -56,7 +56,6 @@ E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\bin\Debug\EntityFramework
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\bin\Debug\EntityFramework.xml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\bin\Debug\EntityFramework.SqlServer.xml
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\bin\Debug\ru\EntityFramework.resources.dll
-E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\RegistrationCarApp.csproj.AssemblyReference.cache
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\AuthorizationWindow.g.cs
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\View\Window\MainWindow.g.cs
 E:\Projects\Cars\RegistrationCarApp\RegistrationCarApp\obj\Debug\App.g.cs

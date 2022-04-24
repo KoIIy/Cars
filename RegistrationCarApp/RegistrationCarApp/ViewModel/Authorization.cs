@@ -47,17 +47,17 @@ namespace RegistarionCarApp.ViewModel
                 return auth ??
                     (auth = new RelayCommand(obj =>
                     {
-                        if (Login == "" && Password == "")
+                        if (string.IsNullOrEmpty(Login) && string.IsNullOrEmpty(Password))
                         {
                             MessageBox.Show("Введите логин и пароль.");
                             return;
                         }
-                        if (Login == "")
+                        if (string.IsNullOrEmpty(Login))
                         {
                             MessageBox.Show("Введите логин.");
                             return;
                         }
-                        if (Password == "")
+                        if (string.IsNullOrEmpty(Password))
                         {
                             MessageBox.Show("Введите пароль.");
                             return;
